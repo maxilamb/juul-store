@@ -1,5 +1,6 @@
-import React from 'react';
-import { Element } from 'rc-scroll-anim';
+import React, { useEffect, useState } from 'react';
+import { Element, Event } from 'rc-scroll-anim';
+import cx from 'classnames';
 import SectionHeader from '../../common/section-header';
 import classicTaste from './images/classic.webp';
 import mangoTaste from './images/mango.webp';
@@ -9,8 +10,27 @@ import virdgTaste from './images/virdg.webp';
 import fruitsMixTaste from './images/fruits-mix.webp';
 
 export default function Taste() {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    Event.addEventListener('scroll', () => {
+      if (window.scrollY > 1200 || window.scrollY > 1560) {
+        setAnimate(true);
+      } else {
+        setAnimate(false);
+      }
+    });
+    return () => Event.removeEventListener('scroll');
+  });
   return (
-    <Element component='section' className='px-lg-5 text-center' id='tastes'>
+    <Element
+      component='section'
+      className={cx('px-lg-5 text-center animate__animated', {
+        animate__fadeIn: animate,
+        animate__fadeOut: !animate,
+      })}
+      id='tastes'
+    >
       <SectionHeader header='Только вкус ничего больше' text='Открывайте для себя вкусы JUUL' />
       <div className='taste-list'>
         <div className='taste-item'>
