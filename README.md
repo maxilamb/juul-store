@@ -7,6 +7,8 @@ contains pages:
 1. main page
 1. contact
 1. about
-1. faq
-1. order page
 1. payment success and error
+
+##State management
+
+used hooks useReducer and useContext
