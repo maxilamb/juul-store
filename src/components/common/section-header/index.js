@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.sass';
 
 function SectionHeader({ header, text }) {
   return (
-    <div className='section-header text-center'>
-      <h2 className='display-4'>{header}</h2>
-      <p className='text-muted'>{text}</p>
+    <div className='section-header'>
+      <h2 className='title'>{header}</h2>
+      <p className='slogan'>{text}</p>
     </div>
   );
 }
