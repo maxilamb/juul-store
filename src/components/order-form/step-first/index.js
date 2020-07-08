@@ -10,7 +10,15 @@ function StepFirst() {
   } = useContext(Context);
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        dispatch({
+          type: 'CHANGE_FORM_STAGE',
+          payload: 2,
+        });
+      }}
+    >
       <div className='product-color'>
         <h6>Выберите цвет вашего Juul</h6>
         <ul className='choice-of-color'>
@@ -65,7 +73,7 @@ function StepFirst() {
           </button>
         </div>
       </div>
-      <button type='submit' className='btn btn-outline-dark btn-lg btn-block rounded-pill px-5'>
+      <button className='btn btn-outline-dark btn-lg btn-block rounded-pill px-5' type='submit'>
         Купить
       </button>
     </form>
