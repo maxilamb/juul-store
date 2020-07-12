@@ -5,3 +5,38 @@
 .input-group-append .btn
   border-top-right-radius: 50rem
   border-bottom-right-radius: 50rem
+
+.product-color
+  h6
+    text-transform: uppercase
+
+  .choice-of-color
+    display: flex
+    justify-content: center
+    padding: 0
+    margin: 0
+
+    li
+      list-style: none
+      width: 2.5em
+      height: 2.5em
+      margin: 0 5px
+      border-radius: 2em
+      cursor: pointer
+      transition: all .6s ease
+
+    li:hover, li.active
+      box-shadow: 1px 1px 5px #c0c0c0
+      transform: scale(1.2)
+
+    li:nth-of-type(1)
+      background-color: #262626
+
+    li:nth-of-type(2)
+      background-color: #0063ab
+
+    li:nth-of-type(3)
+      background-color: #dc1721
+
+    li:nth-of-type(4)
+      background-color: #daba87
