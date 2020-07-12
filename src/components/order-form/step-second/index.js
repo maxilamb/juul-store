@@ -158,7 +158,7 @@ export default function StepSecond() {
           )}
         </div>
         <button
-          className='btn btn-outline-success btn-lg btn-block rounded-pill px-5'
+          className='btn btn-outline-danger btn-lg btn-block rounded-pill py-3 action'
           type='submit'
         >
           Перейти к оплате

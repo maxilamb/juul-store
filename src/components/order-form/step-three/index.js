@@ -60,7 +60,10 @@ export default function StepThree() {
             </span>
           </label>
         </div>
-        <button type='submit' className='btn btn-lg btn-block btn-outline-success rounded-pill'>
+        <button
+          type='submit'
+          className='btn btn-outline-danger btn-lg btn-block rounded-pill py-3 action'
+        >
           Оплатить
         </button>
         <Link to='/' onClick={() => dispatch({ type: 'CHANGE_FORM_STAGE', payload: 2 })}>

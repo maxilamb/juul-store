@@ -22,7 +22,10 @@ function StepSuccess() {
         </h3>
         <img className='w-100' src={ImgSticker} alt='sticker' />
         <div className='form-group'>
-          <button type='submit' className='btn btn-outline-success btn-block rounded-pill btn-lg'>
+          <button
+            type='submit'
+            className='btn btn-outline-success btn-lg btn-block rounded-pill py-3 action'
+          >
             Заказать ещё
           </button>
         </div>

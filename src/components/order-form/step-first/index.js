@@ -45,7 +45,7 @@ function StepFirst() {
         </ul>
       </div>
       <h5>Количество</h5>
-      <div className='input-group mb-3'>
+      <div className='input-group mb-3 input-group-lg'>
         <div className='input-group-prepend'>
           <button
             className='btn btn-outline-secondary'
@@ -73,7 +73,10 @@ function StepFirst() {
           </button>
         </div>
       </div>
-      <button className='btn btn-outline-dark btn-lg btn-block rounded-pill px-5' type='submit'>
+      <button
+        className='btn btn-outline-danger btn-lg btn-block rounded-pill py-3 action'
+        type='submit'
+      >
         Купить
       </button>
     </form>
