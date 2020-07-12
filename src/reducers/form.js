@@ -38,12 +38,16 @@ export default function (state, action) {
         ...state,
         formStage: payload,
       };
-    case 'SET_USER_DATA': {
+    case 'SET_USER_DATA':
       return {
         ...state,
         ...payload,
       };
-    }
+    case 'CHANGE_PAYMENT_METHOD':
+      return {
+        ...state,
+        paymentMethod: payload,
+      };
     default:
       return state;
   }
