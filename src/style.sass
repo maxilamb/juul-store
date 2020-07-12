@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css')
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance: textfield
+
+::-webkit-scrollbar
+  height: 8px
+  width: 8px
+
+::-webkit-scrollbar-track
+  background: #f1f1f1
+
+::-webkit-scrollbar-thumb
+  background: #d2d2d2
+
+::-webkit-scrollbar-thumb:hover
+  background: #b8b8b8
+
+button:focus,
+select:focus,
+input:focus
+  box-shadow: none !important
+  outline: none !important
+
+html, body
+  height: 100%
+
+body
+  font-family: 'Source Sans Pro', sans-serif
+  font-size: 100%
+  color: #000000
+  background-color: white
+
+a
+  text-decoration: underline
+
+a:hover
+  color: #1e8cde !important
+
+.row
+  margin: 0
+
+section
+  padding: 60px 0 0
+
+header
+  z-index: 999
+
+#tastes
+  background: rgb(245,245,247)
+  background: linear-gradient(0deg, rgba(245,245,247,1) 0%, rgba(255,255,255,1) 100%)
+
+  .taste-list
+
+    .taste-item
+      display: inline-block
+      vertical-align: top
+      text-align: center
+      width: 120px
+      padding: 0 15px 10px
+
+      span
+        font-size: 1rem
+
+      img
+        width: 100%
+
+#map, #warranty
+  background-color: #f5f5f7
+
+#map
+  padding-bottom: 50px
+
+
+@media screen and ( min-width: 960px )
+  #tastes
+
+    .taste-list
+
+      .taste-item
+        width: 160px
+
+        span
+          font-size: 1.4rem
+
+  section
+    padding: 0
+    min-height: auto !important
+
+    .section-header
+      padding: 80px 0 100px
+
+  .w-lg-60
+    max-width: 60% !important
+
+  .w-lg-80
+    max-width: 80% !important
+
+
+.btn-outline-danger
+  color: #f91155 !important
+  border-color: #f91155 !important
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus
+  color: #ffffff !important
+  background-color: #f91155 !important
+  border-color: #f91155 !important
+
+.btn.action
+  font-size: 1.75em !important
