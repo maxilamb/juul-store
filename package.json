@@ -9,6 +9,7 @@
     "animate.css": "^4.1.0",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
+    "formik": "^2.1.4",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "rc-scroll-anim": "^2.7.4",
@@ -17,8 +18,7 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-svg-map": "^2.1.0",
-    "redux": "^4.0.5"
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-scripts start",
