@@ -2,6 +2,7 @@ const store = {
   price: 1999,
   oldPrice: 2395,
   formStage: 1,
+  paymentMethod: 'webmoney',
   amount: 1,
   selectedColor: 'black',
   fullname: '',
