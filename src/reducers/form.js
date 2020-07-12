@@ -38,11 +38,10 @@ export default function (state, action) {
         ...state,
         formStage: payload,
       };
-    case 'CHANGE_LOCAL_DATA': {
-      const { selector, value } = payload;
+    case 'SET_USER_DATA': {
       return {
         ...state,
-        [selector]: value,
+        ...payload,
       };
     }
     default:
