@@ -24,7 +24,7 @@ function StepSuccess() {
         <div className='form-group'>
           <button
             type='submit'
-            className='btn btn-outline-success btn-lg btn-block rounded-pill py-3 action'
+            className='btn btn-outline-success btn-lg btn-block rounded-pill action'
           >
             Заказать ещё
           </button>

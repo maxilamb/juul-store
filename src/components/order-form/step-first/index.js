@@ -73,10 +73,7 @@ function StepFirst() {
           </button>
         </div>
       </div>
-      <button
-        className='btn btn-outline-danger btn-lg btn-block rounded-pill py-3 action'
-        type='submit'
-      >
+      <button className='btn btn-outline-danger btn-lg btn-block rounded-pill action' type='submit'>
         Купить
       </button>
     </form>
