@@ -1,0 +1,76 @@
+#juul
+  padding-top: 70px
+
+.product-image
+  width: 100%
+
+.product-card
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  text-align: center
+  padding: 0
+
+  h1
+    font-size: 1.3em
+    font-weight: bold
+    text-align: center
+
+  p
+    hyphens: auto
+    text-align: left
+
+  h1, p
+    margin: 10px auto
+
+  .price
+    text-align: center
+    color: #f91155
+    font-size: 1.9em
+    font-weight: bold
+
+    span:nth-of-type(1)
+      position: relative
+      font-size: 1.5rem
+      margin-left: 10px
+      color: #6c757d
+
+    span:nth-of-type(1):after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      width: 100%
+      height: 3px
+      background-color: #f91155
+
+
+@media screen and (min-width: 375px)
+  .product-card
+    h1
+      font-size: 1.59em
+
+@media screen and (min-width: 425px)
+  .product-card h1
+    font-size: 1.8em
+
+@media screen and (min-width: 505px)
+  .product-card h1
+    font-size: 2.2em
+
+@media screen and (min-width: 768px)
+  .product-card
+    padding: 50px 0
+
+    .form-container
+      width: 480px
+      margin: 0 auto
+
+    h1
+      font-size: 2.8em
+
+    p
+      width: 85%
+
+    h1, p
+      margin: 0 auto
