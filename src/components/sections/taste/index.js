@@ -26,8 +26,8 @@ export default function Taste() {
     <Element
       component='section'
       className={cx('px-lg-5 text-center animate__animated', {
-        animate__fadeIn: animate,
-        animate__fadeOut: !animate,
+        animate__bounceInUp: animate,
+        animate__bounceOutDown: !animate,
       })}
       id='tastes'
     >
