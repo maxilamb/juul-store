@@ -1,0 +1,66 @@
+header
+  position: fixed
+  top: 0
+  left: 0
+  padding: 6px 0
+  width: 100%
+  display: flex
+  background-color: white
+
+  .logo
+    font-size: 2em
+
+  a
+    color: black
+    text-decoration: none
+
+  .top
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    a:hover,
+    a:focus
+      color: black !important
+      text-decoration: none
+
+    .toggle
+      .line1
+        transform: rotate(-45deg) translate(-6px, 5px)
+      .line2
+        opacity: 0
+      .line3
+        transform: rotate(45deg) translate(-6px, -5px)
+
+    .burger
+      cursor: pointer
+      width: 30px
+      height: 30px
+
+      div
+        height: 3px
+        margin: 5px 0
+        background-color: black
+        transition: all .5s cubic-bezier(.18,.89,.32,1.28)
+
+  .open
+    clip-path: circle(100vh) !important
+
+  .nav
+    position: fixed
+    top: 60px
+    left: 0
+    height: 94vh
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    background-color: #f5f5f7
+    clip-path: circle(0)
+    transition: all 1s cubic-bezier(.18,.89,.32,1.28)
+
+    li
+      font-size: 2em
+
+

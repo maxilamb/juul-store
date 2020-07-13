@@ -19,7 +19,7 @@ function StepFirst() {
         });
       }}
     >
-      <div className='product-color'>
+      <div className='product-color pb-4'>
         <h6>Выберите цвет вашего Juul</h6>
         <ul className='choice-of-color'>
           <li
