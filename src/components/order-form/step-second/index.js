@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import cx from 'classnames';
 import Context from '../../../context';
 
 const validationSchema = Yup.object().shape({
@@ -41,7 +42,7 @@ export default function StepSecond() {
       <form onSubmit={formik.handleSubmit}>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.fullname })}
             type='text'
             name='fullname'
             value={formik.values.fullname}
@@ -50,12 +51,12 @@ export default function StepSecond() {
           />
           <small className='text-muted'>* Данные должны совпадать с паспортными</small>
           {errors.fullname && touched.fullname ? (
-            <p className='text-danger text-center'>{errors.fullname}</p>
+            <p className='text-danger text-center p-0'>{errors.fullname}</p>
           ) : null}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.street })}
             type='text'
             name='street'
             value={formik.values.street}
@@ -63,12 +64,12 @@ export default function StepSecond() {
             placeholder='Улица'
           />
           {errors.street && touched.street && (
-            <p className='text-danger text-center'>{errors.street}</p>
+            <p className='text-danger text-center p-0'>{errors.street}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.house })}
             type='number'
             name='house'
             value={formik.values.house}
@@ -76,12 +77,12 @@ export default function StepSecond() {
             placeholder='Дом, квартира и т. п.'
           />
           {errors.house && touched.house && (
-            <p className='text-danger text-center'>{errors.house}</p>
+            <p className='text-danger text-center p-0'>{errors.house}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.country })}
             type='text'
             name='country'
             value={formik.values.country}
@@ -90,12 +91,12 @@ export default function StepSecond() {
             disabled
           />
           {errors.country && touched.country && (
-            <p className='text-danger text-center'>{errors.country}</p>
+            <p className='text-danger text-center p-0'>{errors.country}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.region })}
             type='text'
             name='region'
             value={formik.values.region}
@@ -103,23 +104,25 @@ export default function StepSecond() {
             placeholder='Край/Область/Регион'
           />
           {errors.region && touched.region && (
-            <p className='text-danger text-center'>{errors.region}</p>
+            <p className='text-danger text-center p-0'>{errors.region}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.city })}
             type='text'
             name='city'
             value={formik.values.city}
             onChange={formik.handleChange}
             placeholder='Город'
           />
-          {errors.city && touched.city && <p className='text-danger text-center'>{errors.city}</p>}
+          {errors.city && touched.city && (
+            <p className='text-danger text-center p-0'>{errors.city}</p>
+          )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.postalCode })}
             type='number'
             name='postalCode'
             value={formik.values.postalCode}
@@ -127,12 +130,12 @@ export default function StepSecond() {
             placeholder='Почтовый индекс'
           />
           {errors.postalCode && touched.postalCode && (
-            <p className='text-danger text-center'>{errors.postalCode}</p>
+            <p className='text-danger text-center p-0'>{errors.postalCode}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.phone })}
             type='phone'
             name='phone'
             value={formik.values.phone}
@@ -140,12 +143,12 @@ export default function StepSecond() {
             placeholder='Номер мобильного'
           />
           {errors.phone && touched.phone && (
-            <p className='text-danger text-center'>{errors.phone}</p>
+            <p className='text-danger text-center p-0'>{errors.phone}</p>
           )}
         </div>
         <div className='form-group'>
           <input
-            className='form-control rounded-pill'
+            className={cx('form-control rounded-pill', { 'border-danger': errors.email })}
             type='email'
             name='email'
             value={formik.values.email}
@@ -154,7 +157,7 @@ export default function StepSecond() {
           />
           <small className='text-muted'>* Мы будем присылать информацию о статусе заказе</small>
           {errors.email && touched.email && (
-            <p className='text-danger text-center'>{errors.email}</p>
+            <p className='text-danger text-center p-0'>{errors.email}</p>
           )}
         </div>
         <button
