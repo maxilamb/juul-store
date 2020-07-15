@@ -123,7 +123,7 @@ const mock = [
 
 function Feedback() {
   return (
-    <Element component='section' className=' text-center px-lg-5' id='map'>
+    <Element component='section' className=' text-center px-lg-5' id='review'>
       <SectionHeader
         header='Отзывы покупателей'
         text='* Вы можете оставить отзыв после получения товара'
