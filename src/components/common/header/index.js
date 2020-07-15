@@ -3,6 +3,7 @@ import { Event } from 'rc-scroll-anim/es';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import NavLink from '../nav-link';
+import Logo from '../logo';
 import './style.sass';
 
 export default function Header() {
@@ -25,8 +26,7 @@ export default function Header() {
       <div className='container'>
         <div className='top'>
           <NavLink className='logo' to='/' rootTo='juul'>
-            <span>Wylsa</span>
-            <span>Shop</span>
+            <Logo />
           </NavLink>
           <Link
             to='/'
