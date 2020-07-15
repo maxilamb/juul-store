@@ -20,23 +20,13 @@ function Footer() {
           <div className='col-12 col-md-3'>
             <ul className='list-group list-group-horizontal'>
               <li className='list-group-item'>
-                <a href='https://www.instagram.com/wylsashop_'>
+                <a href='https://www.instagram.com/explore/tags/juullabs/'>
                   <i title='Мы в инстаграм' className='fab fa-instagram' />
                 </a>
               </li>
               <li className='list-group-item'>
-                <a href='https://www.t.me/wylsashop_bot'>
+                <a href='https://www.t.me/juullabs'>
                   <i title='Напишите нам в telegram' className='fab fa-telegram-plane' />
-                </a>
-              </li>
-              <li className='list-group-item'>
-                <a href='/'>
-                  <i title='Напишите нам в viber' className='fab fa-viber' />
-                </a>
-              </li>
-              <li className='list-group-item'>
-                <a href='/'>
-                  <i title='Напишите нам в whatsapp' className='fab fa-whatsapp' />
                 </a>
               </li>
             </ul>
