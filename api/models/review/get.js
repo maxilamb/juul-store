@@ -2,10 +2,10 @@ const Review = require('../review');
 
 module.exports = async (req, res, next) => {
   try {
-    const data = await Review.find();
+    const reviews = await Review.find();
 
     res.json({
-      data,
+      reviews,
     });
   } catch (e) {
     next(e);
