@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function FeedbackItem({ fullname, date, comment, feedback: { yes, no } }) {
+export default function FeedbackItem({ fullname, date, comment, pool: { yes, no } }) {
   return (
     <div className='feedback-item'>
       <div className='header'>
@@ -28,7 +28,7 @@ FeedbackItem.propTypes = {
   fullname: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  feedback: PropTypes.shape({
+  pool: PropTypes.shape({
     yes: PropTypes.number.isRequired,
     no: PropTypes.number.isRequired,
   }).isRequired,
