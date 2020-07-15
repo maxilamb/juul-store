@@ -9,7 +9,7 @@ export default function NavLink({ children, rootTo, to, clickHandler, className 
   } = window;
   if (pathname === '/')
     return (
-      <AnchorLink component='a' className={className} onClick={clickHandler} to={rootTo}>
+      <AnchorLink component='a' href='/' className={className} onClick={clickHandler} to={rootTo}>
         {children}
       </AnchorLink>
     );
