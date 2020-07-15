@@ -10,4 +10,4 @@ export default function Logo() {
   );
 }
 
-export const LogoFooter = () => <h2 className='display-5 logo-footer'>JUULLAB</h2>;
+export const LogoFooter = () => <h2 className='display-5 logo-footer'>JUULLABS</h2>;
