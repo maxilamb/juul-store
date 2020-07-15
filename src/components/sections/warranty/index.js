@@ -19,7 +19,7 @@ export default function Warranty() {
             <Article
               header='Защита покупателей '
               text={`Если товар, который вы заказали, не был доставлен
-              или существенно отличается от описания, мы поможем вернуть его стоимость.`}
+              или существенно отличается от описания, мы вернём его стоимость.`}
               center
             />
             <Link to='/back-money' className='btn btn-lg btn-outline-primary rounded-pill'>
@@ -30,8 +30,8 @@ export default function Warranty() {
             <img src={imgB} alt='tracking shipment' />
             <Article
               header='Отслеживание посылки'
-              text={`Мы круглосуточно контролируем каждую операцию в
-              режиме реального времени, чтобы противодействовать мошенничеству.`}
+              text={`Мы круглосуточно контролируем перемещение вашей посылки.
+              Вы можете узнать её местоположение по трэк-коду.`}
               center
             />
             <a href='https://track24.ru/' className='btn btn-lg btn-outline-primary rounded-pill'>
@@ -42,8 +42,8 @@ export default function Warranty() {
             <img src={imgC} alt='feedback' />
             <Article
               header='Обратная связь'
-              text={`Каждая операция кодируется с помощью
-              нашей усовершенствованной технологии шифрования.`}
+              text={`Если у вас отслись вопросы или есть предложения
+               как улучшить нашу работу, напишите нам`}
               center
             />
             <Link to='/contact' className='btn btn-lg btn-outline-primary rounded-pill'>
