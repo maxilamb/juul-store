@@ -7,13 +7,15 @@ const ReviewSchema = new Schema({
     min: [1, 'Минимальная оценка 1 звезда'],
     max: [5, 'Максимальная оценка 5 звёзд'],
   },
-  data: Date,
+  data: String,
   comment: String,
   pool: {
     yes: Number,
     no: Number,
   },
 });
+
+const Review = model('Review', ReviewSchema);
 
 // const mock = [
 //   {
@@ -133,7 +135,5 @@ const ReviewSchema = new Schema({
 // ];
 //
 // Review.insertMany(mock, (err, dock) => console.log(err));
-
-const Review = model('Review', ReviewSchema);
 
 module.exports = Review;
