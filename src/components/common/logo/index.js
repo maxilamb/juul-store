@@ -4,7 +4,7 @@ import './style.sass';
 
 export default function Logo() {
   return (
-    <div className='logo black-box'>
+    <div className='logo'>
       <img src={LogoImg} alt='Logo' />
     </div>
   );
