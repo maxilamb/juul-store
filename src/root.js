@@ -11,6 +11,7 @@ import NotFound from './components/sections/404';
 const IndexPage = lazy(() => import('./components/routes/index-page'));
 const TermsAndConditionsPage = lazy(() => import('./components/routes/terms/terms-and-conditions'));
 const TermsOfUse = lazy(() => import('./components/routes/terms/terms-of-use'));
+const Feedback = lazy(() => import('./components/routes/feedback'));
 
 function Root() {
   const [store, dispatch] = useReducer(FormReducer, Store);
@@ -28,6 +29,8 @@ function Root() {
             <Route path='/' component={IndexPage} exact />
             <Route path='/termsAndConditions' component={TermsAndConditionsPage} />
             <Route path='/terms' component={TermsOfUse} />
+            <Route path='/contact' component={Feedback} />
+            <Route path='/back-money' component={Feedback} />
             <Route path='*' component={NotFound} />
           </Switch>
           <Footer />
