@@ -7,7 +7,7 @@ const ReviewSchema = new Schema({
     min: [1, 'Минимальная оценка 1 звезда'],
     max: [5, 'Максимальная оценка 5 звёзд'],
   },
-  data: String,
+  date: String,
   comment: String,
   pool: {
     yes: Number,
