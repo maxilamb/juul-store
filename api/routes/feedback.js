@@ -3,7 +3,7 @@ const { check } = require('express-validator');
 const post = require('../models/feedback/post');
 
 module.exports = (app) => {
-  app.put(
+  app.post(
     '/api/v1/feedpack',
     [
       check('isContactForm', 'Обязательное поле')
@@ -18,11 +18,7 @@ module.exports = (app) => {
         .withMessage('Поле fullname должно быть длинее 4 символов')
         .trim()
         .escape(),
-      check('track-code', 'Обязательное поле')
-        .isString()
-        .withMessage('Поле track-code должно быть string')
-        .trim()
-        .escape(),
+      check('track-code').trim().escape(),
       check('email').isString().isEmail(),
       check('message', 'Обязательное поле')
         .isString()
