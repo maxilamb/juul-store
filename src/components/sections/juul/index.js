@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Element } from 'rc-scroll-anim';
+import axios from 'axios';
 import Context from '../../../context';
 import BlackProduct from './img/juul_black.webp';
 import BlueProduct from './img/juul_blue.webp';
@@ -26,8 +27,14 @@ function getImage(color) {
 
 export default function Juul() {
   const {
+    store,
     store: { selectedColor, formStage, price, oldPrice },
   } = useContext(Context);
+
+  useEffect(() => {
+    if (formStage !== 4) return;
+    axios.post('/api/v1/order', store);
+  }, [formStage, store]);
 
   return (
     <Element component='section' className='container-fluid' id='juul'>
