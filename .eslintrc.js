@@ -40,7 +40,7 @@ module.exports = {
     'react/no-did-mount-set-state': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-props-no-spreading': 'off',
-
+    'no-unused-expressions': [2, { allowTernary: true, allowShortCircuit: true }],
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
     "jsx-a11y/label-has-for": [2, {
       "required": {
