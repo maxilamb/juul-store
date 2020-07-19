@@ -12,9 +12,9 @@ export default function Warranty() {
   return (
     <Element component='section' id='warranty'>
       <SectionHeader header='Покупайте с увереностью' text='Гарантия возврата средств' />
-      <div className='container'>
+      <div className='container-fluid container-lg'>
         <div className='row'>
-          <div className='col-12 col-lg-4 text-center'>
+          <div className='col-12 col-md-4 text-center'>
             <img src={imgA} alt='customer protection' />
             <Article
               header='Защита покупателей '
@@ -26,7 +26,7 @@ export default function Warranty() {
               Вернуть деньги
             </Link>
           </div>
-          <div className='col-12 col-lg-4 text-center'>
+          <div className='col-12 col-md-4 text-center'>
             <img src={imgB} alt='tracking shipment' />
             <Article
               header='Отслеживание посылки'
@@ -38,7 +38,7 @@ export default function Warranty() {
               Отследить посылку
             </a>
           </div>
-          <div className='col-12 col-lg-4 text-center'>
+          <div className='col-12 col-md-4 text-center'>
             <img src={imgC} alt='feedback' />
             <Article
               header='Обратная связь'
