@@ -27,7 +27,7 @@
     "frontend": "react-scripts start",
     "init-model": "node ./api/models/init-model.js",
     "api-install": "yarn install --cwd ./api",
-    "heroku-postbuild": "yarn init-model && yarn api-install && yarn build",
+    "heroku-postbuild": "yarn api-install && yarn build && yarn init-model",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
