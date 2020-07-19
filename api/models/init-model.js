@@ -121,6 +121,7 @@ Promise.all([Review.deleteMany({}), Review.insertMany(mock)])
   .then(() => {
     // eslint-disable-next-line no-console
     console.log('data --->', 'ok');
+    process.exit(0);
   })
   .catch((error) => {
     // eslint-disable-next-line no-console
