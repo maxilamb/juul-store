@@ -33,7 +33,8 @@ function Feedback() {
       ) : (
         <div className='feedback-line container'>
           {data.map((feedback) => (
-            <FeedbackItem key={feedback.date} {...feedback} />
+            // eslint-disable-next-line no-underscore-dangle
+            <FeedbackItem key={feedback._id} {...feedback} />
           ))}
         </div>
       )}
