@@ -8,10 +8,9 @@ import { Loader } from '../../common/stub/loader';
 
 function Feedback() {
   const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     async function getData() {
       const {
         data: { reviews },
@@ -33,8 +32,7 @@ function Feedback() {
       ) : (
         <div className='feedback-line container'>
           {data.map((feedback) => (
-            // eslint-disable-next-line no-underscore-dangle
-            <FeedbackItem key={feedback._id} {...feedback} />
+            <FeedbackItem key={feedback.date} {...feedback} />
           ))}
         </div>
       )}

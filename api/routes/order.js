@@ -43,8 +43,8 @@ module.exports = (app) => {
         .trim()
         .escape(),
       check('house', 'Обязательное поле')
-        .isString()
-        .withMessage('Поле house должно быть string')
+        .isNumeric()
+        .withMessage('Поле house должно быть number')
         .not()
         .isEmpty()
         .withMessage('Поле house не должно быть пустым')
@@ -67,8 +67,8 @@ module.exports = (app) => {
         .trim()
         .escape(),
       check('postalCode', 'Обязательное поле')
-        .isString()
-        .withMessage('Поле postalCode должно быть string')
+        .isNumeric()
+        .withMessage('Поле postalCode должно быть number')
         .not()
         .isEmpty()
         .withMessage('Поле postalCode не должно быть пустым')
