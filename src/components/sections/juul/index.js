@@ -2,26 +2,30 @@ import React, { useContext, useEffect } from 'react';
 import { Element } from 'rc-scroll-anim';
 import axios from 'axios';
 import Context from '../../../context';
-import BlackProduct from './img/juul_black.webp';
-import BlueProduct from './img/juul_blue.webp';
-import GoldProduct from './img/juul_gold.webp';
-import RedProduct from './img/juul_red.webp';
+import BlackProductWebp from './img/juul_black.webp';
+import BlackProductJpg from './img/juul_black.jpg';
+import BlueProductWebp from './img/juul_blue.webp';
+import BlueProductJpg from './img/juul_blue.jpg';
+import GoldProductWebp from './img/juul_gold.webp';
+import GoldProductJpg from './img/juul_gold.jpg';
+import RedProductWebp from './img/juul_red.webp';
+import RedProductJpg from './img/juul_red.jpg';
 import StepFirst from '../../order-form/step-first';
 import StepSecond from '../../order-form/step-second';
 import StepThree from '../../order-form/step-three';
 import StepSuccess from '../../order-form/step-success';
 import './style.sass';
 
-function getImage(color) {
+function getImage(color, format) {
   switch (color) {
     case 'blue':
-      return BlueProduct;
+      return format === 'webp' ? BlueProductWebp : BlueProductJpg;
     case 'gold':
-      return GoldProduct;
+      return format === 'webp' ? GoldProductWebp : GoldProductJpg;
     case 'red':
-      return RedProduct;
+      return format === 'webp' ? RedProductWebp : RedProductJpg;
     default:
-      return BlackProduct;
+      return format === 'webp' ? BlackProductWebp : BlackProductJpg;
   }
 }
 
@@ -40,11 +44,17 @@ export default function Juul() {
     <Element component='section' className='container-fluid' id='juul'>
       <div className='row'>
         <div className='col-12 col-md-7 d-flex flex-column justify-content-end'>
-          <img
-            className='product-image animate__animated animate__tada'
-            src={getImage(selectedColor)}
-            alt='JUUL'
-          />
+          <picture>
+            <source
+              className='product-image animate__animated animate__tada'
+              srcSet={getImage(selectedColor, 'jpg')}
+            />
+            <img
+              className='product-image animate__animated animate__tada'
+              src={getImage(selectedColor, 'webp')}
+              alt='JUUL'
+            />
+          </picture>
         </div>
         <div className='col-12 col-md-5 product-card'>
           <div>

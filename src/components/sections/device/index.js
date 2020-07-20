@@ -1,7 +1,8 @@
 import React from 'react';
 import { Element } from 'rc-scroll-anim';
 import SectionHeader from '../../common/section-header';
-import ImgJuul from './device.webp';
+import ImgJuulWebp from './device.webp';
+import ImgJuulJpg from './device.jpg';
 import Article from '../../common/article';
 
 const header = 'Знакомьтесь JUUL';
@@ -37,7 +38,10 @@ export default function Device() {
           ))}
         </div>
         <div className='col-12 col-lg-8 d-flex'>
-          <img className='w-100' src={ImgJuul} alt='text here' />
+          <picture>
+            <source srcSet={ImgJuulJpg} type='image/jpg' />
+            <img className='w-100' src={ImgJuulWebp} alt='text here' />
+          </picture>
         </div>
       </div>
     </Element>
