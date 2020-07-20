@@ -21,7 +21,7 @@ export default function NavLink({ children, rootTo, to, clickHandler, className 
 }
 
 NavLink.propTypes = {
-  children: PropTypes.array || PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   rootTo: PropTypes.string,
   to: PropTypes.string,
   clickHandler: PropTypes.func,
