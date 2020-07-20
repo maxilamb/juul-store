@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
 import './style.sass';
 
 const validationSchema = yup.object().shape({
@@ -28,8 +29,7 @@ export default function FeedBack() {
     validationSchema,
     validateOnChange: true,
     onSubmit: (values) => {
-      // eslint-disable-next-line no-console
-      console.log('submit --->', values);
+      axios.post('/api/v1/feedback', values);
     },
   });
   const { errors, touched } = formik;

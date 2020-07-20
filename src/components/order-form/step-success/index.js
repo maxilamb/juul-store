@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../../../context';
-import ImgSticker from './sticker.webp';
+import ImgStickerWebp from './sticker.webp';
+import ImgStickerJpg from './sticker.jpg';
 
 function StepSuccess() {
   const { dispatch } = useContext(Context);
@@ -20,7 +21,10 @@ function StepSuccess() {
             💗
           </span>
         </h3>
-        <img className='w-100' src={ImgSticker} alt='sticker' />
+        <picture>
+          <source srcSet={ImgStickerJpg} />
+          <img className='w-100' src={ImgStickerWebp} alt='sticker' />
+        </picture>
         <div className='form-group'>
           <button
             type='submit'
