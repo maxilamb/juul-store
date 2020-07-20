@@ -2,11 +2,13 @@ const express = require('express');
 const helmet = require('helmet');
 const path = require('path');
 const morgan = require('morgan');
+const compression = require('compression');
 
 const { PORT, NODE_ENV } = process.env;
 
 const app = express();
 
+app.use(compression());
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
