@@ -3,16 +3,16 @@ import { Element, Event } from 'rc-scroll-anim';
 import cx from 'classnames';
 import SectionHeader from '../../common/section-header';
 import classicTasteWebp from './images/classic.webp';
-import classicTasteJpg from './images/classic.jpg';
+import classicTastePng from './images/classic.png';
 import mangoTasteWebp from './images/mango.webp';
-import mangoTasteJpg from './images/mango.jpg';
-import mintTasteJpg from './images/mint.jpg';
+import mangoTastePng from './images/mango.png';
+import mintTastePng from './images/mint.png';
 import mintTasteWebp from './images/mint.webp';
-import vanillaTasteJpg from './images/vanilla.jpg';
+import vanillaTastePng from './images/vanilla.png';
 import vanillaTasteWebp from './images/vanilla.webp';
-import virdgTasteJpg from './images/virdg.jpg';
+import virdgTastePng from './images/virdg.png';
 import virdgTasteWebp from './images/virdg.webp';
-import fruitsMixTasteJpg from './images/fruits-mix.jpg';
+import fruitsMixTastePng from './images/fruits-mix.png';
 import fruitsMixTasteWebp from './images/fruits-mix.webp';
 
 export default function Taste() {
@@ -40,42 +40,42 @@ export default function Taste() {
         <div className='taste-list'>
           <div className='taste-item'>
             <picture>
-              <source srcSet={classicTasteJpg} />
+              <source srcSet={classicTastePng} />
               <img src={classicTasteWebp} alt='taste classic' />
             </picture>
             <span>Классический</span>
           </div>
           <div className='taste-item'>
             <picture>
-              <source srcSet={mangoTasteJpg} />
+              <source srcSet={mangoTastePng} />
               <img src={mangoTasteWebp} alt='taste mango' />
             </picture>
             <span>Манго</span>
           </div>
           <div className='taste-item'>
             <picture>
-              <source srcSet={mintTasteJpg} />
+              <source srcSet={mintTastePng} />
               <img src={mintTasteWebp} alt='taste mint' />
             </picture>
             <span>Мята</span>
           </div>
           <div className='taste-item'>
             <picture>
-              <source srcSet={vanillaTasteJpg} />
+              <source srcSet={vanillaTastePng} />
               <img src={vanillaTasteWebp} alt='taste vanilla' />
             </picture>
             <span>Ваниль</span>
           </div>
           <div className='taste-item'>
             <picture>
-              <source srcSet={virdgTasteJpg} />
+              <source srcSet={virdgTastePng} />
               <img src={virdgTasteWebp} alt='taste virdg' />
             </picture>
             <span>Вирджиния</span>
           </div>
           <div className='taste-item'>
             <picture>
-              <source srcSet={fruitsMixTasteJpg} />
+              <source srcSet={fruitsMixTastePng} />
               <img src={fruitsMixTasteWebp} alt='taste fruit mix' />
             </picture>
             <span>Фруктовый микс</span>
