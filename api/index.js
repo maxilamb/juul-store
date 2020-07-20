@@ -3,7 +3,6 @@ const helmet = require('helmet');
 const path = require('path');
 const morgan = require('morgan');
 const compression = require('compression');
-const SmtpServer = require('./libs/smtp-server');
 
 const { PORT, NODE_ENV } = process.env;
 
@@ -30,5 +29,4 @@ app.get('/*', (req, res) => {
 app.use((req, res) => res.sendStatus(404));
 
 const port = PORT || 5000;
-SmtpServer.listen(25);
 app.listen(port);
