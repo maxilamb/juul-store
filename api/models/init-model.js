@@ -116,8 +116,8 @@ const mock = [
     },
   },
 ];
-
-Promise.all([Review.deleteMany({}), Review.insertMany(mock)])
+Review.deleteMany({})
+  .then(() => Review.insertMany(mock))
   .then(() => {
     // eslint-disable-next-line no-console
     console.log('data --->', 'ok');
