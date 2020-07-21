@@ -16,16 +16,17 @@ app.use(express.static(path.join(__dirname, '../', 'build')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 if (NODE_ENV === 'development') {
-  app.use(morgan('combined'));
+  app.use(morgan('dev'));
+} else {
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
+  });
 }
 
 require('./routes/feedback')(app);
 require('./routes/order')(app);
 require('./routes/review')(app);
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
-});
+require('./routes/email')(app);
 
 app.use((req, res) => res.sendStatus(404));
 
