@@ -16,6 +16,9 @@ app.use(express.static(path.join(__dirname, '../', 'build')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes/email')(app);
+require('./routes/feedback')(app);
+require('./routes/order')(app);
+require('./routes/review')(app);
 
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -24,10 +27,6 @@ if (NODE_ENV === 'development') {
     res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
   });
 }
-
-require('./routes/feedback')(app);
-require('./routes/order')(app);
-require('./routes/review')(app);
 
 app.use((req, res) => res.sendStatus(404));
 
