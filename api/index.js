@@ -13,6 +13,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../', 'build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 if (NODE_ENV === 'development') {
   app.use(morgan('combined'));
