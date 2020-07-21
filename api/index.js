@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../', 'build')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('./routes/email')(app);
+
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 } else {
@@ -26,7 +28,6 @@ if (NODE_ENV === 'development') {
 require('./routes/feedback')(app);
 require('./routes/order')(app);
 require('./routes/review')(app);
-require('./routes/email')(app);
 
 app.use((req, res) => res.sendStatus(404));
 
