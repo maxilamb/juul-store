@@ -16,8 +16,17 @@ const OpenEmailList = model(
   }),
 );
 
-const VisitSiteList = model(
-  'VisitSiteList',
+const ActionsList = model(
+  'ActionsList',
+  new Schema({
+    actionId: Number,
+    email: String,
+    geo: String,
+  }),
+);
+
+const UnsubscribeList = model(
+  'UnsubscribeList',
   new Schema({
     email: String,
     geo: String,
@@ -27,5 +36,6 @@ const VisitSiteList = model(
 module.exports = {
   EmailList,
   OpenEmailList,
-  VisitSiteList,
+  ActionsList,
+  UnsubscribeList,
 };
