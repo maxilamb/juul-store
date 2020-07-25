@@ -7,7 +7,7 @@ import './style.sass';
 
 export default function Charge() {
   return (
-    <Element component='div' className='charge container-fluid px-lg-5 '>
+    <Element component='div' className='charge container-fluid px-lg-5' id='charge-info'>
       <SectionHeader
         header='Универсальный USB порт для зарядки'
         text='Литиевая батарея емкостью 280 мАч с LED индикатором'
