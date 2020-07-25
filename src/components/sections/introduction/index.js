@@ -11,9 +11,9 @@ export default function Introduction() {
       <SectionHeader header='JUUL W01' text='Ваша следующая сигарета - не сигарета' />
       <div className='price'>
         <h3>
-          За 1999 ₽ <span className='old-price'>2345 ₽</span>
+          1999 ₽ <span className='old-price'>2345 ₽</span>
         </h3>
-        <button type='button' className='btn btn-outline-danger btn-lg rounded-pill px-5'>
+        <button type='button' className='btn btn-danger btn-lg rounded-pill'>
           Купить
         </button>
       </div>
