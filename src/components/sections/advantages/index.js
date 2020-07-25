@@ -4,10 +4,11 @@ import SectionHeader from '../../common/section-header';
 import deviceImage from './img/device.jpg';
 import deviceImage2 from './img/device-2.jpg';
 import Article from '../../common/article';
+import './style.sass';
 
 export default function Advantages() {
   return (
-    <Element component='div' className='container px-lg-5'>
+    <Element component='div' className='container px-lg-5' id='advantages'>
       <SectionHeader
         header='Преимущества JUUL W01'
         text={`
@@ -19,7 +20,7 @@ export default function Advantages() {
           <img className='w-100' src={deviceImage2} alt='' />
         </div>
         <div className='col-12 col-lg-6 d-flex align-items-center'>
-          <div>
+          <div className='advantages-article'>
             <Article
               header='Четыре функции защиты'
               text={`

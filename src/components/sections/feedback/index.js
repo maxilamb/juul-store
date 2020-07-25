@@ -3,8 +3,8 @@ import { Element } from 'rc-scroll-anim';
 import axios from 'axios';
 import SectionHeader from '../../common/section-header';
 import FeedbackItem from './feedback-item';
-import './style.sass';
 import { Loader } from '../../common/stub/loader';
+import './style.sass';
 
 function Feedback() {
   const [data, setData] = useState([]);
