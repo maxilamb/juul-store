@@ -1,14 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Event } from 'rc-scroll-anim/es';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
 import NavLink from '../nav-link';
 import Logo from '../logo';
+
+import context from '../../../context';
 import './style.sass';
+import OrderForm from '../../order-form';
 
 export default function Header() {
+  const {
+    dispatch,
+    store: { formIsVisible },
+  } = useContext(context);
   const [scroll, setScroll] = useState(false);
-  const [toggleOpen, setToggle] = useState(false);
+  const [btnIsVisible, showButton] = useState(false);
 
   useEffect(() => {
     Event.addEventListener('scroll', () => {
@@ -16,6 +22,11 @@ export default function Header() {
         setScroll(true);
       } else {
         setScroll(false);
+      }
+      if (window.scrollY > 255) {
+        showButton(true);
+      } else {
+        showButton(false);
       }
     });
     return () => Event.removeEventListener('scroll');
@@ -28,33 +39,26 @@ export default function Header() {
           <NavLink className='logo' to='/' rootTo='juul'>
             <Logo />
           </NavLink>
-          <Link
-            to='/'
-            onClick={() => setToggle((s) => !s)}
-            className={cx('burger', { toggle: toggleOpen })}
+          <button
+            type='button'
+            className={cx('btn rounded-pill', {
+              'd-none': !formIsVisible && !btnIsVisible,
+              'btn-danger': !formIsVisible,
+              'btn-outline-primary': formIsVisible,
+            })}
+            onClick={() => {
+              dispatch({
+                type: 'SET_VISIBLE',
+                payload: !formIsVisible,
+              });
+            }}
           >
-            <div className='line1' />
-            <div className='line2' />
-            <div className='line3' />
-          </Link>
+            {formIsVisible ? 'куплю позже' : 'купить'}
+          </button>
         </div>
-        <ul className={cx('nav', { open: toggleOpen })}>
-          <li>
-            <NavLink clickHandler={() => setToggle(false)} rootTo='juul' to='/'>
-              Juul
-            </NavLink>
-          </li>
-          <li>
-            <NavLink clickHandler={() => setToggle(false)} rootTo='device' to='/'>
-              Что такое Juul
-            </NavLink>
-          </li>
-          <li>
-            <NavLink clickHandler={() => setToggle(false)} rootTo='warranty' to='/'>
-              Безопасная покупка
-            </NavLink>
-          </li>
-        </ul>
+        <div className={cx('nav', { open: formIsVisible })}>
+          <OrderForm />
+        </div>
       </div>
     </header>
   );
