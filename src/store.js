@@ -1,4 +1,5 @@
 const store = {
+  formIsVisible: false,
   price: 1999,
   oldPrice: 2395,
   formStage: 1,
