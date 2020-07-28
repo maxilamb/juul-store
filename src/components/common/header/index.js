@@ -4,7 +4,7 @@ import cx from 'classnames';
 import NavLink from '../nav-link';
 import Logo from '../logo';
 
-import context from '../../../context';
+import Context from '../../../context';
 import './style.sass';
 import OrderForm from '../../order-form';
 
@@ -12,7 +12,7 @@ export default function Header() {
   const {
     dispatch,
     store: { formIsVisible },
-  } = useContext(context);
+  } = useContext(Context);
   const [scroll, setScroll] = useState(false);
   const [btnIsVisible, showButton] = useState(false);
 

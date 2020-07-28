@@ -7,6 +7,12 @@
   border-bottom-right-radius: 50rem !important
 
 .product-color
+  text-align: center
+
+  img
+    height: 50vh
+    transform: rotate(30deg)
+
   h6
     text-transform: uppercase
 
@@ -18,8 +24,7 @@
 
     li
       list-style: none
-      width: 2.5em
-      height: 2.5em
+      padding: 20px
       margin: 0 5px
       border-radius: 2em
       cursor: pointer
@@ -33,10 +38,19 @@
       background-color: #262626
 
     li:nth-of-type(2)
-      background-color: #0063ab
+      background-color: #5f6161
 
     li:nth-of-type(3)
-      background-color: #dc1721
+      background-color: #4ce1ce
 
     li:nth-of-type(4)
+      background-color: #dc1721
+
+    li:nth-of-type(5)
       background-color: #daba87
+
+
+@media screen and (min-width: 1000px)
+  .product-color
+    img
+      height: 60vh

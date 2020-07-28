@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../../../context';
-import ImgStickerWebp from './sticker.webp';
-import ImgStickerJpg from './sticker.jpg';
+import checkedIcon from './checked.svg';
+import './style.sass';
 
 function StepSuccess() {
   const { dispatch } = useContext(Context);
@@ -15,16 +15,13 @@ function StepSuccess() {
           });
         }}
       >
-        <h3>
-          Спасибо что заказали JUUL, мы скоро свяжемся с вами
+        <img className='checked-image' src={checkedIcon} alt='checked' />
+        <h3 className='text-center'>
+          Спасибо за заказ, мы отправим вам письмо на указаный email в ближайшее время
           <span role='img' aria-label='heart'>
             💗
           </span>
         </h3>
-        <picture>
-          <source srcSet={ImgStickerJpg} />
-          <img className='w-100' src={ImgStickerWebp} alt='sticker' />
-        </picture>
         <div className='form-group'>
           <button
             type='submit'

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Context from '../../../context';
 import MirIc from './payment-icon/mir.svg';
 import MasterCardIc from './payment-icon/master-card.svg';
@@ -10,7 +11,8 @@ import './style.sass';
 
 export default function StepThree() {
   const {
-    store: { paymentMethod },
+    store,
+    store: { paymentMethod, price },
     dispatch,
   } = useContext(Context);
 
@@ -39,6 +41,13 @@ export default function StepThree() {
       type: 'CHANGE_FORM_STAGE',
       payload: 4,
     });
+    (async () => {
+      try {
+        await axios.post('/api/v1/order', store);
+      } catch (error) {
+        throw new Error(error);
+      }
+    })();
   }
 
   function handleChange(e) {
@@ -50,6 +59,7 @@ export default function StepThree() {
 
   return (
     <div className='step-three'>
+      <h2>Вы оплачиваете: {price} ₽</h2>
       <form onSubmit={handleSubmit}>
         <div className='form-check'>
           <label htmlFor='qiwi' className='form-check-label'>
