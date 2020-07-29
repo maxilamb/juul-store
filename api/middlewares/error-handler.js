@@ -11,8 +11,15 @@ module.exports = (error, req, res, next) => {
     res.sendStatus(status).json({ message });
   }
 
-  res.status(error.status || 500).json({
-    status: error.status,
-    message: error.message,
-  });
+  if (Array.isArray(error)) {
+    error = {
+      status: 400,
+      message: error,
+    };
+
+    res.status(error.status || 500).json({
+      status: error.status,
+      message: error.message,
+    });
+  }
 };
