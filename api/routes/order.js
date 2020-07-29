@@ -53,9 +53,6 @@ module.exports = (app) => {
       check('region', 'Обязательное поле')
         .isString()
         .withMessage('Поле region должно быть string')
-        .not()
-        .isEmpty()
-        .withMessage('Поле region не должно быть пустым')
         .trim()
         .escape(),
       check('city', 'Обязательное поле')
