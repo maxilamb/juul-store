@@ -30,5 +30,7 @@ if (NODE_ENV === 'development') {
 
 app.use((req, res) => res.sendStatus(404));
 
+app.use(require('./middlewares/error-handler'));
+
 const port = PORT || 5000;
 app.listen(port);
