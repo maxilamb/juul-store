@@ -12,7 +12,7 @@ const pixel = async (req, res, next) => {
     const item = await EmailList.findOne({ hash: emailHash });
 
     await OpenEmailList.create({
-      email: item ? item.email : emailHash,
+      email: item !== null ? item.email : emailHash,
       geo,
     });
 
@@ -32,7 +32,7 @@ const unsubscribe = async (req, res, next) => {
     const item = await EmailList.findOne({ hash: emailHash });
 
     await UnsubscribeList.create({
-      email: item ? item.email : emailHash,
+      email: item !== null ? item.email : emailHash,
       geo,
     });
 
