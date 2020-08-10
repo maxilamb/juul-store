@@ -1,18 +1,18 @@
 const geoip = require('geoip-lite');
 const path = require('path');
-const { EmailList, OpenEmailList, ActionsList, UnsubscribeList } = require('../emails.js');
+const { EmailList, OpenEmailList, UnsubscribeList } = require('../emails.js');
 
-module.exports.pixel = async (req, res, next) => {
+const pixel = async (req, res, next) => {
   try {
     const { emailHash } = req.query;
 
     const ipv4 = req.connection.remoteAddress.replace(/^.*:/, '');
     const geo = geoip.lookup(ipv4);
 
-    const { email } = await EmailList.findOne({ hash: emailHash });
+    const item = await EmailList.findOne({ hash: emailHash });
 
     await OpenEmailList.create({
-      email,
+      email: item ? item.email : emailHash,
       geo,
     });
 
@@ -22,17 +22,17 @@ module.exports.pixel = async (req, res, next) => {
   }
 };
 
-module.exports.unsubscribe = async (req, res, next) => {
+const unsubscribe = async (req, res, next) => {
   try {
     const { emailHash } = req.query;
 
     const ipv4 = req.connection.remoteAddress.replace(/^.*:/, '');
     const geo = geoip.lookup(ipv4);
 
-    const { email } = await EmailList.findOne({ hash: emailHash });
+    const item = await EmailList.findOne({ hash: emailHash });
 
     await UnsubscribeList.create({
-      email,
+      email: item ? item.email : emailHash,
       geo,
     });
 
@@ -42,23 +42,7 @@ module.exports.unsubscribe = async (req, res, next) => {
   }
 };
 
-module.exports.action = async (req, res, next) => {
-  try {
-    const { emailHash, actionId } = req.query;
-
-    const ipv4 = req.connection.remoteAddress.replace(/^.*:/, '');
-    const geo = geoip.lookup(ipv4);
-
-    const { email } = await EmailList.findOne({ hash: emailHash });
-
-    await ActionsList.create({
-      actionId,
-      email,
-      geo,
-    });
-
-    res.redirect('https://juul-labs.ru/');
-  } catch (e) {
-    next(e);
-  }
+module.exports = {
+  unsubscribe,
+  pixel,
 };

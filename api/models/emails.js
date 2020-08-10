@@ -16,15 +16,6 @@ const OpenEmailList = model(
   }),
 );
 
-const ActionsList = model(
-  'ActionsList',
-  new Schema({
-    actionId: Number,
-    email: String,
-    geo: String,
-  }),
-);
-
 const UnsubscribeList = model(
   'UnsubscribeList',
   new Schema({
@@ -36,6 +27,5 @@ const UnsubscribeList = model(
 module.exports = {
   EmailList,
   OpenEmailList,
-  ActionsList,
   UnsubscribeList,
 };
