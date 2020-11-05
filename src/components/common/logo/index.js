@@ -1,13 +1,12 @@
 import React from 'react';
-import LogoImg from './logo.jpg';
-import './style.sass';
+import style from './style.module.sass';
 
 export default function Logo() {
   return (
-    <div className='logo'>
-      <img src={LogoImg} alt='Logo' />
+    <div className={style.logo}>
+      <h2>OVNS</h2>
     </div>
   );
 }
 
-export const LogoFooter = () => <h2 className='display-5 logo-footer'>JUULLABS</h2>;
+export const LogoFooter = () => <h2 className='display-5'>OVNS</h2>;
