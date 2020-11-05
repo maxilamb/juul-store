@@ -2,6 +2,7 @@
   "name": "juul-store",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://maxilamb.github.io/juul-store/",
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -27,6 +28,7 @@
     "init-model": "node ./api/models/init-model.js",
     "api-install": "yarn install --cwd ./api",
     "heroku-postbuild": "yarn api-install && yarn build && yarn init-model",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
