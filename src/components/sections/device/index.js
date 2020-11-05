@@ -13,7 +13,7 @@ export default function Device() {
       />
       <picture>
         <source media='(min-width: 768px)' srcSet={deviceLargeSize} />
-        <img className='w-100' src={deviceSmallSize} alt='text here' />
+        <img className='w-100' src={deviceSmallSize} alt='OVNS W01 pod' />
       </picture>
     </Element>
   );
