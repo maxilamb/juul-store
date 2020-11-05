@@ -10,7 +10,7 @@ export default function Introduction() {
   const { dispatch } = useContext(Context);
   return (
     <Element component='div' id='introduction'>
-      <SectionHeader header='JUUL W01' text='Ваша следующая сигарета - не сигарета' />
+      <SectionHeader header='OVNS W01' text='Ваша следующая сигарета - не сигарета' />
       <div className='price'>
         <h3>
           1999 ₽ <span className='old-price'>2345 ₽</span>
