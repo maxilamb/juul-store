@@ -17,7 +17,7 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "serve": "set NODE_ENV=development&& nodemon index.js",
-    "start": "set NODE_ENV=production&& node index.js"
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
   }
 }
